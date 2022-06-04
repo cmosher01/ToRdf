@@ -1,0 +1,31 @@
+plugins {
+    id 'application'
+}
+
+
+
+version = '1.0.0'
+
+group = 'nu.mine.mosher.rdf'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation group: 'org.eclipse.rdf4j', name: 'rdf4j-client', version: 'latest.release'
+    implementation group: 'org.semarglproject', name: 'semargl-rdf4j', version: 'latest.release'
+    implementation group: 'org.slf4j', name: 'slf4j-simple', version: 'latest.integration'
+}
+
+
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of 17
+    }
+}
+
+application {
+    mainClass.set 'nu.mine.mosher.rdf.ToRdf'
+}
